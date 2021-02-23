@@ -6,6 +6,10 @@ reports_dir = (
     Path.cwd()
     / "im2pdf_output"
 )
+im2pdf_output= list(reports_dir.glob("*.pdf"))
+im2pdf_output.sort()
 
-for path in reports_dir.glob("*.pdf"):
+for path in im2pdf_output:
     print(path.name)
+
+
