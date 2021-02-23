@@ -5,9 +5,9 @@ def img2pdf(fname):
     filename = fname
     name = filename.split('.')[0]
     im = PIL.Image.open(filename)
-    if not os.path.exists('im2pdf_output'):
-        os.makedirs('im2pdf_output')
-    newfilename = ''.join(['im2pdf_output/',name,'.pdf'])
+    if not os.path.exists('output_folder'):
+        os.makedirs('output_folder')
+    newfilename = ''.join(['output_folder/',name,'.pdf'])
     PIL.Image.Image.save(im, newfilename, "PDF", resolution = 100.0)
     print("processed successfully: {}".format(newfilename))
 
