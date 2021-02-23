@@ -1,16 +1,11 @@
 from PyPDF2 import PdfFileMerger
+pdf_merger = PdfFileMerger()
 
-pdfs = []
-t = 1
-for i in range(10):
-    f = str(t) + ".pdf"
-    pdfs.append(f)
-    t = t + 1
-print(pdfs)
-merger = PdfFileMerger()
+from pathlib import Path
+reports_dir = (
+    Path.cwd()
+    / "im2pdf_output"
+)
 
-for pdf in pdfs:
-    merger.append(pdf)
-
-merger.write("result.pdf")
-merger.close()
+for path in reports_dir.glob("*.pdf"):
+    print(path.name)
